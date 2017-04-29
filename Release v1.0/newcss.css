@@ -1,0 +1,125 @@
+body{
+    background: black;
+    min-width: 700px;
+    color:white;
+}
+#headline{
+    font-size: 2.4em;
+    font-family: cursive;
+    color:white;
+    text-align: center;
+    min-height:65px;
+    position: relative; 
+}
+#version{
+    transform: rotate(-10deg);
+    position:relative;
+    top: -25px;
+    left: 150px;
+    float:left;
+    font-size:1.2em;
+}
+#version_margin{
+    width:200px;
+    margin:auto;
+    min-height:17px;
+}
+#myCanvas{
+    width: 700px;
+    height:400px;
+    margin:auto;
+    margin-top:10px;
+    cursor: none;
+}
+#canvas2{
+    margin-left:150px;
+    position:absolute;
+    z-index: -1;
+}
+#score_div{
+    font-size:2em;
+    float:left;       
+}
+#käster_div{
+    font-size:2em;
+    float:left;
+     display:none;
+}
+#life_div{
+    float:right;
+    font-size: 2em;
+}
+#menu{
+    width: 700px;
+    margin:auto;
+    margin-bottom: 30px;
+}
+#menu_2{
+    padding-top:10px;
+    width:350px;
+    margin:auto;
+    text-align: center;
+}
+#menu_3{
+    padding-top:10px;
+}
+#play_menu{
+    float:left;
+}
+#pause_menu{
+    display:none;
+}
+#restart_menu{
+    width: 150px;
+    margin:auto;
+    display:none;
+}
+#instruction{
+   // display: none;
+    font-size: 100%;
+    clear:both;
+    float:left;
+}
+#trololo{
+    width:320px;
+    margin:auto;
+    display:none;
+}
+#icons{
+    display:none;
+}
+#heart2{
+    position:relative;
+    top:-3px;
+    vertical-align:text-bottom;
+}
+#heartbeat{
+    min-width:35px;
+    float:left;
+}
+#level{
+    color:red;
+}
+#test{
+    font-size: 200%;
+}
+fieldset legend{
+    color:white;
+}
+#dev_menu{
+    clear:both;
+    display:none;
+}
+#question_div{
+    position:absolute;
+    width:690px;
+    padding: 240px 0px 0px 10px;   
+}
+#question{
+   display:none;
+}
+#answers{
+    width:680px;
+    padding-left:20px;
+    display: none;
+}

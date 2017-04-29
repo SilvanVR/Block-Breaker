@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BlockBreaker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="newcss.css">
+        <script type="text/javascript" src="newjavascript.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="jquery.js"></script>
+    </head>
+    <body onload='checkSupported(),atariBreakout()'>
+        <div id="headline" onmouseover="startCrazyText()" onmouseout="stopCrazyText()">Block Breaker</div>
+        <div id="version_margin"> <div id="version" onclick="startAnimate()">v1.0</div> </div>
+        
+        <div onclick="startMoveBall()" id='myCanvas'>
+            <div id="question_div">
+                <div id="question"> </div>
+                <div id="answers">
+                    <span id="answer1"></span><br><span id="answer2"></span><br><span id="answer3"></span><br><span id="answer4"></span><br><span id="answer5"></span></div>
+            </div>
+            <canvas  id="canvas" width='700' height='400'></canvas>
+        </div>
+        
+        <div id='menu'>
+            
+            <canvas id="canvas2" width="400" height="20"></canvas>
+            
+            <div id="menu_3">
+                      
+                <div id="score_div">Score: <span id="score"> 0 </span></div>
+                <div id="käster_div">Käster <img id="heart2" src="PowerUps/heart.png" width="30" height="30"> <span id="kästerLife"> 50 </span></div>
+                <div id="life_div"> <div id="heartbeat"><img id="heart2" src="PowerUps/heart.png" width="30" height="30"></div><span id="lifes">?</span>
+                    <br> Level: <span id="level">1</span></div>
+
+                <div id='menu_2'>
+                    <div id='play_menu'> 
+                        <button onclick='startGame(60,10,20,10,385,20,9999,"veryEasy"),buttonStart()'>Very Easy</button>
+                        <button onclick='startGame(32,10,20,10,385,20,10,"Easy"),buttonStart()'>Easy</button>
+                        <button onclick='startGame(8,10,20,7,385,20,3,"Normal"),buttonStart()'>Normal</button>
+                        <button onclick='startGame(2,2,10,3,393,20,2,"Hard"),buttonStart()'>Hard</button>
+                        <button onclick='startGame(1,2,8,2,395,10,1,"Insane"),buttonStart()'>Insane</button>
+                    </div>
+
+                    <div id='pause_menu'>
+                        <button onclick='pause(),
+                                         document.getElementById("restart_menu").style.display = "block",
+                                         document.getElementById("pause_menu").style.display = "none"'>Pause</button>
+                    </div>
+
+                </div>
+
+                    <div id='restart_menu'>
+                        <button onclick='play(),
+                                         document.getElementById("pause_menu").style.display = "block",
+                                         document.getElementById("restart_menu").style.display = "none"'>Resume</button>
+                        <button onclick='document.getElementById("play_menu").style.display = "block",
+                                         document.getElementById("restart_menu").style.display = "none",
+                                         sound.currentTime = 0, level = 1, resetPowerUp("autopilot");'>Restart</button>
+                    </div>
+
+            </div>
+                       
+            <div id="instruction"> Complete Level 3 to reach the special Level! (And after this the super secret Level) </div>
+                        
+            <fieldset id = "dev_menu">
+                <legend>Dev-Menu</legend>
+                <button onclick='level=1, document.getElementById("level").innerHTML = level'>Level 1</button>
+                <button onclick='level=2, document.getElementById("level").innerHTML = level'>Level 2</button>
+                <button onclick='level=3, document.getElementById("level").innerHTML = level'>Level 3</button>
+                <button onclick='level=4, document.getElementById("level").innerHTML = "Last"'>Last Level</button>
+                <button onclick='level="Käster",document.getElementById("level").innerHTML = level'>Käster-Ball</button>
+            </fieldset>
+        </div>
+       
+        
+        <div id="test">
+         
+        </div>
+              
+        <div id ="icons">
+            <img id="ball" src="Icons/ball.png">
+            <img id="ball2" src="Icons/ball2.png">
+            <img id="stick" src="Icons/schläger.png">
+            <img id="stick-gun" src="Icons/schläger-gun.png">
+            <img id="small" src="PowerUps/small.png">
+            <img id="tall" src="PowerUps/tall.png">
+            <img id="slow" src="PowerUps/turtle.png">
+            <img id="fast" src="PowerUps/rabbit.png">
+            <img id="heart" src="PowerUps/heart.png">
+            <img id="fireball" src="PowerUps/fireball.png">
+            <img id="cartman" src="PowerUps/cartman.png">
+            <img id="gun" src="PowerUps/gun.png">
+            <img id="clock" src="PowerUps/clock.png">
+            <img id="autopilot" src="PowerUps/autopilot.png">
+            <img id="bomb" src="PowerUps/bomb.png">
+            <img id="kästerBall" src="kästerLevel/kästerBall.png">
+            <img id="kästerBallTot" src="kästerLevel/kästerBallTot.png">
+            <img id="kästerWon" src="kästerLevel/kästerWon.png">
+            <img id="laser" src="kästerLevel/laser.png">
+        </div>
+        
+        <div id="audio">           
+            <audio id="soundLevel2"><source src="sounds/level2.mp3"> </audio>            
+            <audio id="soundLevel3"><source src="sounds/level3.mp3"> </audio>   
+            <audio id="thriftshop"><source src="sounds/thriftshop.mp3"> </audio>
+            <audio id="soundLevel1"><source src="sounds/radioactive.mp3"> </audio>
+            <audio id="pirates"><source src="sounds/pirates.mp3"> </audio>
+            <audio id="finalLevel"><source src="sounds/finalLevel.mp3"></audio>            
+            <audio id="soundLevelKäster"><source src="sounds/kästerlevel.mp3"> </audio>            
+            <audio id="trolo"><source src="sounds/trolo.mp3"></audio>            
+            <audio id="soundGun"> <source src="sounds/gun.mp3"> </audio>
+            <audio id="gameover"><source src="sounds/gameover.mp3"></audio>   
+            <audio id="evilLaugh"><source src="sounds/evil_laugh.mp3"></audio> 
+            <audio id="bombSound"><source src="sounds/bomb.mp3"></audio> 
+            <audio id="canttouchthis"><source src="sounds/canttouchthis.mp3"></audio>  
+            <audio id="hit"><source src="sounds/hit.mp3"></audio> 
+            <audio id="hit2"><source src="sounds/hit2.mp3"></audio>     
+        </div>
+        
+    </body>
+</html>

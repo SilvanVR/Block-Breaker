@@ -1,0 +1,80 @@
+body{
+    background: black;
+    min-width: 700px;
+}
+#headline{
+    font-size: 2.4em;
+    font-family: cursive;
+    color:white;
+    text-align: center;
+    min-height:65px;
+    position: relative; 
+}
+#headline:hover{
+    cursor: help;
+}
+#myCanvas{
+    width: 700px;
+    height:400px;
+    margin:auto;
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+canvas{
+    border: 1px solid red;
+    background-image: url("green.png");
+    cursor:none;
+}
+#score_div{
+    font-size:2em;
+    color:white;
+    float:left;
+}
+#menu{
+    width: 700px;
+    margin:auto;
+    margin-bottom: 30px;
+}
+#menu_2{
+    width:350px;
+    padding-top: 10px;
+    margin:auto;
+    text-align: center;
+}
+#play_menu{
+    float:left;
+}
+#pause_menu{
+    display:none;
+}
+#restart_menu{
+    width: 150px;
+    margin:auto;
+    display:none;
+}
+#instruction{
+    font-size: 85%;
+    color:white;
+    clear:both;
+}
+#head2{
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#trololo{
+    width:320px;
+    margin:auto;
+    display:none;
+}
+#ball{
+    display:none;
+}
+#test{
+    color:white;
+    font-size: 200%;
+}
+#test2{
+    color:white;
+}
+

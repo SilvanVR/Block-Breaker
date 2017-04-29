@@ -1,0 +1,120 @@
+body{
+    background: black;
+    min-width: 700px;
+    color:white;
+}
+#headline{
+    font-size: 2.4em;
+    font-family: cursive;
+    color:white;
+    text-align: center;
+    min-height:65px;
+    position: relative; 
+}
+#headline:hover{
+    cursor: help;
+}
+#version{
+    transform: rotate(-10deg);
+    position:relative;
+    top: -25px;
+    left: 150px;
+    float:left;
+    font-size:1.2em;
+}
+#version_margin{
+    width:200px;
+    margin:auto;
+    min-height:17px;
+}
+#myCanvas{
+    width: 700px;
+    height:400px;
+    margin:auto;
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+#canvas{
+    background-image: url("background/green.png");
+    cursor:none;
+}
+#canvas2{
+    float:right;
+    position:relative;
+    top: -82px;
+    left: -145px;
+}
+#score_div{
+    font-size:2em;
+    float:left;       
+}
+#käster_div{
+    font-size:2em;
+    float:left;
+     display:none;
+}
+#life_div{
+    float:right;
+    font-size: 2em;
+}
+#menu{
+    width: 700px;
+    margin:auto;
+    margin-bottom: 30px;
+}
+#menu_2{
+    width:350px;
+    padding-top: 10px;
+    margin:auto;
+    text-align: center;
+}
+#play_menu{
+    float:left;
+}
+#pause_menu{
+    display:none;
+}
+#restart_menu{
+    width: 150px;
+    margin:auto;
+    display:none;
+}
+#instruction{
+    font-size: 85%;
+    clear:both;
+    float:left;
+}
+#head2{
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#trololo{
+    width:320px;
+    margin:auto;
+    display:none;
+}
+#icons{
+    display:none;
+}
+#heart2{
+    position:relative;
+    top:-3px;
+    vertical-align:text-bottom;
+}
+#heartbeat{
+    min-width:35px;
+    float:left;
+}
+#level{
+    color:red;
+}
+#test{
+    font-size: 200%;
+}
+fieldset legend{
+    color:white;
+}
+#dev_menu{
+    clear:both;
+}

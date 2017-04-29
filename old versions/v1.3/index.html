@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BlockBreaker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="newcss.css">
+        <script type="text/javascript" src="newjavascript.js"></script>
+    </head>
+    <body onload='checkSupported(),atariBreakout()' onmousemove="moveWithMouse()">
+        <div id="headline" onclick="trololo()" onmouseover="startCrazyText()" onmouseout="stopCrazyText()">Block Breaker</div>
+        <div id="version_margin"> <div id="version" onclick="startAnimate()">Alpha 1.3!</div> </div>
+        <div id='myCanvas'>
+             <canvas onclick="startMoveBall()" id="canvas" width='700' height='400'></canvas>
+        </div>
+        
+        <div id='menu'>
+            <div id="score_div">Score: <span id="score"> 0 </span></div>
+            <div id="life_div"> <div id="heartbeat"><img id="heart2" src="PowerUps/heart.png" width="30px" height="30px"></div><span id="lifes">?</span>
+                <br> Level: <span id="level">1</span></div>
+             
+            <div id='menu_2'>
+                <div id='play_menu'> 
+                    <button onclick='startGame(60,10,20,10,385,20,9999,"veryEasy"),buttonStart()'>Very Easy</button>
+                    <button onclick='startGame(32,10,20,10,385,20,10,"Easy"),buttonStart()'>Easy</button>
+                    <button onclick='startGame(8,10,20,7,385,10,3,"Normal"),buttonStart()'>Normal</button>
+                    <button onclick='startGame(2,2,10,3,393,20,2,"Hard"),buttonStart()'>Hard</button>
+                    <button onclick='startGame(1,2,8,2,395,10,1,"Insane"),buttonStart()'>Insane</button>
+
+                </div>
+
+                <div id='pause_menu'>
+                    <button onclick='pause(),
+                                     document.getElementById("restart_menu").style.display = "block",
+                                     document.getElementById("pause_menu").style.display = "none"'>Pause</button>
+                </div>
+                
+            </div>
+            
+                <div id='restart_menu'>
+                    <button onclick='play(),
+                                     document.getElementById("pause_menu").style.display = "block",
+                                     document.getElementById("restart_menu").style.display = "none"'>Resume</button>
+                    <button onclick='document.getElementById("play_menu").style.display = "block",
+                                     document.getElementById("restart_menu").style.display = "none"'>Restart</button>
+                </div>
+           
+            <div id="instruction"><span id="head2">Instruction:</span> <br> LEFT KEY: Move Left <br> RIGHT KEY: Move Right <br> 
+                UP KEY: Starts moving Ball <br>DOWN KEY: Cheat (Very Easy & Easy Mode) or faster Ball <br> ... or move with Mouse (won't work in Firefox yet)</div>
+             <button onclick='level=1, document.getElementById("level").innerHTML = level'>Level 1</button>
+             <button onclick='level=2, document.getElementById("level").innerHTML = level'>Level 2</button>
+             <button onclick='level="Käster",document.getElementById("level").innerHTML = level'>Käster-Ball</button>
+        </div>
+       
+        
+        <div id="test">
+            This is a Test!
+        </div>
+              
+        <div id="trololo">
+            <iframe width="300" height="24" src="https://www.youtube.com/embed/sTSA_sWGM44?rel=0" frameborder="0"></iframe>
+        </div>
+        <div id ="icons">
+            <img id="ball" src="Icons/ball.png">
+            <img id="stick" src="Icons/schläger.png">
+            <img id="stick-gun" src="Icons/schläger-gun.png">
+            <img id="small" src="PowerUps/small.png">
+            <img id="tall" src="PowerUps/tall.png">
+            <img id="slow" src="PowerUps/turtle.png">
+            <img id="fast" src="PowerUps/rabbit.png">
+            <img id="heart" src="PowerUps/heart.png">
+            <img id="fireball" src="PowerUps/fireball.png">
+            <img id="cartman" src="PowerUps/cartman.png">
+            <img id="gun" src="PowerUps/gun.png">
+            <img id="kästerBall" src="kästerLevel/kästerBall.png">
+        </div>
+        
+    </body>
+</html>
